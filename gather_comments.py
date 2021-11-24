@@ -16,9 +16,8 @@ youtube = build("youtube", "v3", credentials=credentials)
 #FP vs OOP video ID
 video_id = "08CWw_VD45w"
 
-
+#returns api response if successful, error object otherwise
 def post_comment(txt, parentId):
-    #test post
     request = youtube.comments().insert(
         part="snippet",
         body = {
@@ -36,7 +35,7 @@ def post_comment(txt, parentId):
 
     return res
 
-#db is expected to be a list of json objects
+
 def gather_comments():
     db = {"Comments":[], "IDs":[]}
 
@@ -71,7 +70,7 @@ def gather_comments():
                     db["Comments"].append(rtext)
                     db["IDs"].append(rid)
             except: 
-                pass #No creplies present means keyError will occur
+                pass #No replies present means keyError will occur
     
     return db
 

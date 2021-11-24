@@ -23,6 +23,8 @@ def perform_analysis(df):
     df["Polarity"] = df["Comments"].map(lambda comment: textblob.TextBlob(comment).sentiment.polarity)
     df["Sentiment"] = df["Polarity"].map(lambda pol: "-" if pol < 0.1 else "+")
 
+    #neg, pos, sentiment represented by '-', '+'
+
 
 def store(df):
     '''Pickle dataframe'''
