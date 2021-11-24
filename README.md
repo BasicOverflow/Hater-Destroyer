@@ -2,3 +2,5 @@
 * Once complete, download the credentials from the dashboard into this directory, and name it 'client_secret.json'
 * The Owner of a given video must be the one authenticated to perform certain tasks like post comments
 * hater_destroyer.py is the main file
+
+* Note that the sentiments produced are not perfect
