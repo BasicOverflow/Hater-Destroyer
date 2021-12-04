@@ -3,6 +3,21 @@ from sent_analyzer import create_df, perform_analysis, store
 import random
 
 
+def post_process(df):
+    '''Option to manually go through the dataframe and change the sentiment of comments'''
+    for i, row in df.iterrows():
+        print("{} | {} | {}".format(row["Comments"], row["Polarity"], row["Sentiment"]))
+        
+        x = input()
+        
+        if x == "":
+            pass
+        elif x == "b":
+            break
+        else:
+            df.loc[i,['Sentiment']] = x
+
+
 
 def unleash_beast(df):
     '''Actually posts replies to the foolish comments'''
